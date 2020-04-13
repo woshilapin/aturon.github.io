@@ -753,7 +753,7 @@ hence that only the second impl of `Foo` could possibly apply?
 
 In the system proposed by this post, we'd follow a chain of events like the following:
 
-- The type checker asks: `exists<T> { compat { (): Make<T> } }`
+- The type checker asks: `exists<T> { compat { (): Bar<T> } }`
   - We check the first impl, and end up asking: `compat { (): Bar<?T> }`
     - We return `Maybe`, since we're within `compat` and there are indeed some
       compatible worlds for which `(): Bar<?T>` for some `?T`; but we have no
